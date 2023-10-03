@@ -2,9 +2,11 @@
 
 namespace NotchAfrica\Func;
 
+use Notch\Func\Commands\CurrencyCleanup;
+use Notch\Func\Commands\CurrencyHydrate;
+use Notch\Func\Commands\CurrencySeed;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use NotchAfrica\Func\Commands\FuncCommand;
 
 class FuncServiceProvider extends PackageServiceProvider
 {
@@ -18,8 +20,10 @@ class FuncServiceProvider extends PackageServiceProvider
         $package
             ->name('func')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_func_table')
-            ->hasCommand(FuncCommand::class);
+            ->hasMigration('create_currency_table')
+            ->hasMigration('create_balance_table')
+            ->hasCommand(CurrencyCleanup::class)
+            ->hasCommand(CurrencyHydrate::class)
+            ->hasCommand(CurrencySeed::class);
     }
 }

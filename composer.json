@@ -17,14 +17,23 @@
     ],
     "require": {
         "php": "^8.2",
+        "algolia/scout-extended": "^3.0",
         "chapdel/lawyer": "^1.0",
+        "cybercog/laravel-ban": "^4.8",
+        "cyrildewit/eloquent-viewable": "^7.0",
         "geoip2/geoip2": "^2.13",
         "glorand/laravel-model-settings": "^6.0",
         "illuminate/contracts": "*",
         "jamesmills/laravel-timezone": "^1.13",
         "laracraft-tech/laravel-date-scopes": "^1.1",
+        "league/flysystem-aws-s3-v3": "^3.16",
         "monarobase/country-list": "^3.4",
+        "predis/predis": "^2.2",
+        "propaganistas/laravel-phone": "^5.0",
         "rennokki/laravel-eloquent-query-cache": "^3.4",
+        "spatie/laravel-activitylog": "^4.7",
+        "spatie/laravel-deleted-models": "^1.0",
+        "spatie/laravel-model-status": "^1.14",
         "spatie/laravel-package-tools": "^1.14.0",
         "spatie/laravel-webhook-server": "^3.6",
         "torann/geoip": "^3.0"
@@ -44,8 +53,7 @@
     },
     "autoload": {
         "psr-4": {
-            "NotchAfrica\\Func\\": "src/",
-            "NotchAfrica\\Func\\Database\\Factories\\": "database/factories/"
+            "NotchAfrica\\Func\\": "src/"
         }
     },
     "autoload-dev": {
