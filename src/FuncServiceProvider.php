@@ -2,9 +2,9 @@
 
 namespace NotchAfrica\Func;
 
+use NotchAfrica\Func\Commands\FuncCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use NotchAfrica\Func\Commands\FuncCommand;
 
 class FuncServiceProvider extends PackageServiceProvider
 {
