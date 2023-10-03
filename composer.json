@@ -1,24 +1,33 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "notchafrica/func",
+    "description": "This is my package func",
     "keywords": [
-        ":vendor_name",
+        "notchafrica",
         "laravel",
-        ":package_slug"
+        "func"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/notchafrica/func",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Chapdel KAMGA",
+            "email": "drop@chapdel.me",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
+        "chapdel/lawyer": "^1.0",
+        "geoip2/geoip2": "^2.13",
+        "glorand/laravel-model-settings": "^6.0",
+        "illuminate/contracts": "*",
+        "jamesmills/laravel-timezone": "^1.13",
+        "laracraft-tech/laravel-date-scopes": "^1.1",
+        "monarobase/country-list": "^3.4",
+        "rennokki/laravel-eloquent-query-cache": "^3.4",
         "spatie/laravel-package-tools": "^1.14.0",
-        "illuminate/contracts": "^10.0"
+        "spatie/laravel-webhook-server": "^3.6",
+        "torann/geoip": "^3.0"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -35,19 +44,19 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "NotchAfrica\\Func\\": "src/",
+            "NotchAfrica\\Func\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "NotchAfrica\\Func\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "clear": "@php vendor/bin/testbench package:purge-func --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": [
             "@composer run prepare",
@@ -73,10 +82,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "NotchAfrica\\Func\\FuncServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "Func": "NotchAfrica\\Func\\Facades\\Func"
             }
         }
     },

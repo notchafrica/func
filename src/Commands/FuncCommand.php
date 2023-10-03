@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace NotchAfrica\Func\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FuncCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'func';
 
     public $description = 'My command';
 
