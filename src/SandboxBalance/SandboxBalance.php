@@ -15,8 +15,8 @@ class SandboxBalance extends Model
         'balanceable_type',
         'balanceable_id',
         'amount',
-        'referenceable_type',
-        'referenceable_id',
+        'ref_type',
+        'ref_id',
         'description',
     ];
 
