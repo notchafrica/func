@@ -3,7 +3,6 @@
 namespace NotchAfrica\Func\AvailableBalance;
 
 use Illuminate\Support\Arr;
-use NotchAfrica\Func\SandboxBalance\AvailableBalance;
 
 trait HasAvailableBalance
 {
@@ -12,9 +11,9 @@ trait HasAvailableBalance
      *
      * @return float|int
      */
-    public function getSandboxBalanceAttribute()
+    public function getAvailableBalanceAttribute()
     {
-        return $this->sandboxBalanceHistory()->sum('amount') / 100;
+        return $this->availableBalanceHistory()->sum('amount') / 100;
     }
 
     /**
@@ -22,9 +21,9 @@ trait HasAvailableBalance
      *
      * @return int
      */
-    public function getIntSandboxBalanceAttribute()
+    public function getIntAvailableBalanceAttribute()
     {
-        return (int) $this->sandboxBalanceHistory()->sum('amount');
+        return (int) $this->availableBalanceHistory()->sum('amount');
     }
 
     /**
@@ -32,9 +31,9 @@ trait HasAvailableBalance
      *
      * @return \MrEduar\Balance\Balance
      */
-    public function increaseSandboxBalance(int $amount, array $parameters = [])
+    public function increaseAvailableBalance(int $amount, array $parameters = [])
     {
-        return $this->createSandboxBalanceHistory($amount, $parameters);
+        return $this->createAvailableBalanceHistory($amount, $parameters);
     }
 
     /**
@@ -42,9 +41,9 @@ trait HasAvailableBalance
      *
      * @return \MrEduar\Balance\Balance
      */
-    public function decreaseSandboxBalance(int $amount, array $parameters = [])
+    public function decreaseAvailableBalance(int $amount, array $parameters = [])
     {
-        return $this->createSandboxBalanceHistory(-1 * abs($amount), $parameters);
+        return $this->createAvailableBalanceHistory(-1 * abs($amount), $parameters);
     }
 
     /**
@@ -52,9 +51,9 @@ trait HasAvailableBalance
      *
      * @return \MrEduar\Balance\Balance
      */
-    public function modifySandboxBalance(int $amount, array $parameters = [])
+    public function modifyAvailableBalance(int $amount, array $parameters = [])
     {
-        return $this->createSandboxBalanceHistory($amount, $parameters);
+        return $this->createAvailableBalanceHistory($amount, $parameters);
     }
 
     /**
@@ -63,15 +62,15 @@ trait HasAvailableBalance
      * @param  array  $parameters
      * @return \MrEduar\Balance\Balance
      */
-    public function resetSandboxBalance(int $newAmount = null, $parameters = [])
+    public function resetAvailableBalance(int $newAmount = null, $parameters = [])
     {
-        $this->sandboxBalanceHistory()->delete();
+        $this->availableBalanceHistory()->delete();
 
         if (is_null($newAmount)) {
             return true;
         }
 
-        return $this->createSandboxBalanceHistory($newAmount, $parameters);
+        return $this->createAvailableBalanceHistory($newAmount, $parameters);
     }
 
     /**
@@ -79,9 +78,9 @@ trait HasAvailableBalance
      *
      * @return bool
      */
-    public function hasSandboxBalance(int $amount = 1)
+    public function hasAvailableBalance(int $amount = 1)
     {
-        return $this->balance > 0 && $this->sandboxBalanceHistory()->sum('amount') >= $amount;
+        return $this->balance > 0 && $this->availableBalanceHistory()->sum('amount') >= $amount;
     }
 
     /**
@@ -89,7 +88,7 @@ trait HasAvailableBalance
      *
      * @return bool
      */
-    public function hasNoSandboxBalance()
+    public function hasNoAvailableBalance()
     {
         return $this->balance <= 0;
     }
@@ -99,7 +98,7 @@ trait HasAvailableBalance
      *
      * @return \MrEduar\Balance\Balance
      */
-    protected function createSandboxBalanceHistory(int $amount, array $parameters = [])
+    protected function createAvailableBalanceHistory(int $amount, array $parameters = [])
     {
         $reference = Arr::get($parameters, 'reference');
 
@@ -112,7 +111,7 @@ trait HasAvailableBalance
                 ->put('ref_id', $reference->getKey());
         })->toArray();
 
-        return $this->sandboxBalanceHistory()->create($createArguments);
+        return $this->availableBalanceHistory()->create($createArguments);
     }
 
     /**
@@ -120,7 +119,7 @@ trait HasAvailableBalance
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
-    public function sandboxBalanceHistory()
+    public function availableBalanceHistory()
     {
         return $this->morphMany(AvailableBalance::class, 'balanceable');
     }
