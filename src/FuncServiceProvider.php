@@ -20,7 +20,7 @@ class FuncServiceProvider extends PackageServiceProvider
             ->name('func')
             ->hasConfigFile()
             ->hasMigration('create_currency_table')
-            ->hasMigration('create_balance_table')
+            ->hasMigration('create_balance_history_table')
             ->hasCommand(CurrencyCleanup::class)
             ->hasCommand(CurrencyHydrate::class)
             ->hasCommand(CurrencySeed::class);
