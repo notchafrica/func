@@ -1,6 +1,7 @@
 <?php
 
 namespace NotchAfrica\Func;
+
 use NotchAfrica\Func\Commands\CurrencyCleanup;
 use NotchAfrica\Func\Commands\CurrencyHydrate;
 use NotchAfrica\Func\Commands\CurrencySeed;
