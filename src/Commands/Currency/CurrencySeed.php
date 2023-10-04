@@ -1,6 +1,6 @@
 <?php
 
-namespace Notch\Func\Commands;
+namespace Notch\Func\Commands\Currency;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;

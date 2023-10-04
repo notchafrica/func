@@ -1,6 +1,6 @@
 <?php
 
-namespace Notch\Func\Commands;
+namespace Notch\Func\Commands\Currency;
 
 use App\Models\Currency as ModelsCurrency;
 use Illuminate\Console\Command;

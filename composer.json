@@ -36,7 +36,10 @@
         "spatie/laravel-model-status": "^1.14",
         "spatie/laravel-package-tools": "^1.14.0",
         "spatie/laravel-webhook-server": "^3.6",
-        "torann/geoip": "^3.0"
+        "torann/geoip": "^3.0",
+        "algolia/algoliasearch-client-php": "^3.4",
+        "laravel/scout": "^10.4",
+        "laravolt/avatar": "^5.0"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -73,5 +76,11 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    }
 }
