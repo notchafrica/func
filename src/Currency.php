@@ -1,6 +1,6 @@
 <?php
 
-namespace Notch\Func;
+namespace NotchAfrica\Func;
 
 use Illuminate\Contracts\Cache\Factory as FactoryContract;
 use Illuminate\Support\Arr;

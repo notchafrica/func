@@ -1,6 +1,6 @@
 <?php
 
-namespace Notch\Func\Facades;
+namespace NotchAfrica\Func\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -13,6 +13,6 @@ class Currency extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \Notch\Func\Currency::class;
+        return \NotchAfrica\Func\Currency::class;
     }
 }

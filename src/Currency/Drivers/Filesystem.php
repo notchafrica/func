@@ -1,6 +1,6 @@
 <?php
 
-namespace Notch\Func\Currency\Drivers;
+namespace NotchAfrica\Func\Currency\Drivers;
 
 use DateTime;
 use Illuminate\Support\Arr;

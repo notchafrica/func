@@ -1,8 +1,8 @@
 <?php
 
-namespace Notch\Func\Currency\Formatters;
+namespace NotchAfrica\Func\Currency\Formatters;
 
-use Notch\Func\Currency\Contracts\FormatterInterface;
+use NotchAfrica\Func\Currency\Contracts\FormatterInterface;
 use NumberFormatter;
 
 class PHPIntl implements FormatterInterface

@@ -1,9 +1,9 @@
 <?php
 
-namespace Notch\Func\Commands;
+namespace NotchAfrica\Func\Commands;
 
 use Illuminate\Console\Command;
-use Notch\Func\Currency;
+use NotchAfrica\Func\Currency;
 
 class CurrencyCleanup extends Command
 {

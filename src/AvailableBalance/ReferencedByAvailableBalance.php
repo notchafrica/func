@@ -1,8 +1,8 @@
 <?php
 
-namespace Notch\Func\AvailableBalance;
+namespace NotchAfrica\Func\AvailableBalance;
 
-use Notch\Func\SandboxBalance\AvailableBalance;
+use NotchAfrica\Func\SandboxBalance\AvailableBalance;
 
 trait ReferencedByAvailableBalance
 {

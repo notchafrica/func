@@ -1,6 +1,6 @@
 <?php
 
-namespace Notch\Func\SandboxBalance;
+namespace NotchAfrica\Func\SandboxBalance;
 
 use Illuminate\Support\Arr;
 

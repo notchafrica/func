@@ -1,6 +1,6 @@
 <?php
 
-namespace Notch\Func\Currency\Models;
+namespace NotchAfrica\Func\Currency\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

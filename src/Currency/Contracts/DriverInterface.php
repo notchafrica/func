@@ -1,6 +1,6 @@
 <?php
 
-namespace Notch\Func\Currency\Contracts;
+namespace NotchAfrica\Func\Currency\Contracts;
 
 use DateTime;
 

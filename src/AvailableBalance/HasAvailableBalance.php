@@ -1,9 +1,9 @@
 <?php
 
-namespace Notch\Func\AvailableBalance;
+namespace NotchAfrica\Func\AvailableBalance;
 
 use Illuminate\Support\Arr;
-use Notch\Func\SandboxBalance\AvailableBalance;
+use NotchAfrica\Func\SandboxBalance\AvailableBalance;
 
 trait HasAvailableBalance
 {

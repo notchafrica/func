@@ -1,11 +1,11 @@
 <?php
 
-namespace Notch\Func\Commands;
+namespace NotchAfrica\Func\Commands;
 
 use App\Models\Currency as ModelsCurrency;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
-use Notch\Func\Currency;
+use NotchAfrica\Func\Currency;
 
 class CurrencyHydrate extends Command
 {

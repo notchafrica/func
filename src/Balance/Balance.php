@@ -1,6 +1,6 @@
 <?php
 
-namespace Notch\Func\Balance;
+namespace NotchAfrica\Func\Balance;
 
 use Illuminate\Database\Eloquent\Model;
 

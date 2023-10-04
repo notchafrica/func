@@ -1,6 +1,6 @@
 <?php
 
-use Notch\Func\Currency\Formatters\PHPIntl;
+use NotchAfrica\Func\Currency\Formatters\PHPIntl;
 
 return [
     'currency' => [
@@ -45,20 +45,20 @@ return [
         'drivers' => [
 
             'database' => [
-                'class' => \Notch\Func\Currency\Drivers\Database::class,
+                'class' => \NotchAfrica\Func\Currency\Drivers\Database::class,
                 'connection' => null,
                 'table' => 'currencies',
             ],
 
             'filesystem' => [
-                'class' => \Notch\Func\Currency\Drivers\Filesystem::class,
+                'class' => \NotchAfrica\Func\Currency\Drivers\Filesystem::class,
                 'disk' => 'local',
                 'path' => 'currencies.json',
             ],
 
             'model' => [
                 'table' => 'currencies',
-                'class' => \Notch\Func\Currency\Models\Currency::class,
+                'class' => \NotchAfrica\Func\Currency\Models\Currency::class,
             ],
 
         ],

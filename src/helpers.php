@@ -1,6 +1,6 @@
 <?php
 
-use Notch\Func\Facades\Currency;
+use NotchAfrica\Func\Facades\Currency;
 
 if (! function_exists('currency')) {
     /**
@@ -10,7 +10,7 @@ if (! function_exists('currency')) {
      * @param  string  $from
      * @param  string  $to
      * @param  bool  $format
-     * @return \Notch\Func\Currency\Currency|string
+     * @return \NotchAfrica\Func\Currency\Currency|string
      */
     function currency($amount = null, $from = null, $to = null, $format = true)
     {
