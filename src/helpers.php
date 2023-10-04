@@ -1,6 +1,7 @@
 <?php
 
-use NotchAfrica\Func\Facades\Currency;
+
+use NotchAfrica\Func\Currency;
 
 if (! function_exists('currency')) {
     /**
