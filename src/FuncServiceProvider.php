@@ -1,9 +1,9 @@
 <?php
 
 namespace NotchAfrica\Func;
-use Notch\Func\Commands\Currency\CurrencyCleanup;
-use Notch\Func\Commands\Currency\CurrencyHydrate;
-use Notch\Func\Commands\Currency\CurrencySeed;
+use Notch\Func\Commands\CurrencyCleanup;
+use Notch\Func\Commands\CurrencyHydrate;
+use Notch\Func\Commands\CurrencySeed;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
