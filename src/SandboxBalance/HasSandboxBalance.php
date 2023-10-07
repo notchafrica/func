@@ -3,6 +3,7 @@
 namespace NotchAfrica\Func\SandboxBalance;
 
 use Illuminate\Support\Arr;
+use NotchAfrica\Func\AvailableBalance\AvailableBalance;
 
 trait HasSandboxBalance
 {
