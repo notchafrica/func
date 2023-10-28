@@ -69,7 +69,6 @@ class CurrencySeed extends Command
     {
         $this->info('Seeding Currency');
 
-
         $str = file_get_contents(dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'currencies.json');
 
         switch (config('func.currency.driver')) {
