@@ -1018,12 +1018,14 @@ class CurrencyHydrate extends Command
     public function handle()
     {
 
-        $r = Http::withOptions(['verify' => false])->get('https://api.exchangerate.host/2018-05-11?base=XAFF');
+        $r = Http::withOptions(['verify' => false])->get('http://api.exchangerate.host/historical?date=2018-05-11&source=XAF&access_key='.config('func.currency.api_key'));
 
         if ($r->ok()) {
-            foreach ($r->json()['rates'] as $code => $rate) {
+            foreach ($r->json()['quotes'] as $code => $rate) {
 
-                if ($model = ModelsCurrency::whereCode($code)->first()) {
+                $_code = (string) str($code)->replace('XAF', '');
+
+                if ($model = ModelsCurrency::whereCode($_code)->first()) {
                     $model->exchange_rate = $rate;
                     $model->save();
                 }

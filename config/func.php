@@ -5,6 +5,7 @@ use NotchAfrica\Func\Currency\Formatters\PHPIntl;
 return [
     'currency' => [
         'default' => 'XAF',
+        'api_key' => env('EXCHANGE_HOST_API_KEY'),
         /*
         |--------------------------------------------------------------------------
         | Default Storage Driver

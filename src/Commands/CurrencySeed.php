@@ -69,11 +69,12 @@ class CurrencySeed extends Command
     {
         $this->info('Seeding Currency');
 
-        $str = file_get_contents(CurrencySeed.phpdirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'currencies.json');
 
-        switch (config('notchpay-toolkit.currency.driver')) {
+        $str = file_get_contents(dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'currencies.json');
+
+        switch (config('func.currency.driver')) {
             case 'model':
-                $model = config('notchpay-toolkit.currency.drivers.model.class');
+                $model = config('func.currency.drivers.model.class');
 
                 if ($model::count() == 0) {
                     collect(json_decode($str, true))->each(function ($currency) use ($model) {
@@ -84,7 +85,7 @@ class CurrencySeed extends Command
                 break;
 
             case 'database':
-                $table = config('notchpay-toolkit.currency.drivers.database.table');
+                $table = config('func.currency.drivers.database.table');
                 $this->currencies = DB::table($table)->get();
 
                 if (count($this->currencies) == 0) {
@@ -95,9 +96,9 @@ class CurrencySeed extends Command
 
                 break;
             case 'filesystem':
-                $path = config('notchpay-toolkit.currency.drivers.filesystem.path');
+                $path = config('func.currency.drivers.filesystem.path');
 
-                Storage::disk(config('notchpay-toolkit.currency.drivers.filesystem.disk'))->put($path, json_encode(json_decode($str)));
+                Storage::disk(config('func.currency.drivers.filesystem.disk'))->put($path, json_encode(json_decode($str)));
                 break;
         }
     }
