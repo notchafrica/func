@@ -17,7 +17,6 @@
     ],
     "require": {
         "php": "^8.2",
-        "algolia/scout-extended": "^3.0",
         "chapdel/lawyer": "^1.0",
         "cybercog/laravel-ban": "^4.8",
         "cyrildewit/eloquent-viewable": "^7.0",
