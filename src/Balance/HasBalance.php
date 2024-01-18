@@ -31,9 +31,9 @@ trait HasBalance
      *
      * @return \MrEduar\Balance\Balance
      */
-    public function increaseBalance(int $amount, array $parameters = [])
+    public function increaseBalance(double $amount, array $parameters = [])
     {
-        return $this->createBalanceHistory($amount, $parameters);
+        return $this->createBalanceHistory(round($amount), $parameters);
     }
 
     /**
@@ -41,9 +41,9 @@ trait HasBalance
      *
      * @return \MrEduar\Balance\Balance
      */
-    public function decreaseBalance(int $amount, array $parameters = [])
+    public function decreaseBalance(double $amount, array $parameters = [])
     {
-        return $this->createBalanceHistory(-1 * abs($amount), $parameters);
+        return $this->createBalanceHistory(-1 * abs(round($amount)), $parameters);
     }
 
     /**
@@ -51,9 +51,9 @@ trait HasBalance
      *
      * @return \MrEduar\Balance\Balance
      */
-    public function modifyBalance(int $amount, array $parameters = [])
+    public function modifyBalance(double $amount, array $parameters = [])
     {
-        return $this->createBalanceHistory($amount, $parameters);
+        return $this->createBalanceHistory(round($amount), $parameters);
     }
 
     /**
@@ -62,7 +62,7 @@ trait HasBalance
      * @param  array  $parameters
      * @return \MrEduar\Balance\Balance
      */
-    public function resetBalance(int $newAmount = null, $parameters = [])
+    public function resetBalance(double $newAmount = null, $parameters = [])
     {
         $this->balanceHistory()->delete();
 
@@ -70,7 +70,7 @@ trait HasBalance
             return true;
         }
 
-        return $this->createBalanceHistory($newAmount, $parameters);
+        return $this->createBalanceHistory(round($newAmount), $parameters);
     }
 
     /**
@@ -78,7 +78,7 @@ trait HasBalance
      *
      * @return bool
      */
-    public function hasBalance(int $amount = 1)
+    public function hasBalance($amount = 1)
     {
         return $this->balance > 0 && $this->balanceHistory()->sum('amount') >= $amount;
     }
@@ -98,12 +98,12 @@ trait HasBalance
      *
      * @return \MrEduar\Balance\Balance
      */
-    protected function createBalanceHistory(int $amount, array $parameters = [])
+    protected function createBalanceHistory(double $amount, array $parameters = [])
     {
         $reference = Arr::get($parameters, 'reference');
 
         $createArguments = collect([
-            'amount' => $amount,
+            'amount' => round($amount),
             'description' => Arr::get($parameters, 'description'),
         ])->when($reference, function ($collection) use ($reference) {
             return $collection
