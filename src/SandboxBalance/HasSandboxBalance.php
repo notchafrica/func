@@ -23,7 +23,7 @@ trait HasSandboxBalance
      */
     public function getIntSandboxBalanceAttribute()
     {
-        return (double) $this->sandboxBalanceHistory()->sum('amount');
+        return (float) $this->sandboxBalanceHistory()->sum('amount');
     }
 
     /**
@@ -62,7 +62,7 @@ trait HasSandboxBalance
      * @param  array  $parameters
      * @return \MrEduar\Balance\Balance
      */
-    public function resetSandboxBalance(double $newAmount = null, $parameters = [])
+    public function resetSandboxBalance(?double $newAmount = null, $parameters = [])
     {
         $this->sandboxBalanceHistory()->delete();
 
