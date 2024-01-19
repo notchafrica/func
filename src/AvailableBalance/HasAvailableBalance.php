@@ -31,7 +31,7 @@ trait HasAvailableBalance
      *
      * @return \MrEduar\Balance\Balance
      */
-    public function increaseAvailableBalance(double $amount, array $parameters = [])
+    public function increaseAvailableBalance(float $amount, array $parameters = [])
     {
         return $this->createAvailableBalanceHistory(round($amount), $parameters);
     }
@@ -41,7 +41,7 @@ trait HasAvailableBalance
      *
      * @return \MrEduar\Balance\Balance
      */
-    public function decreaseAvailableBalance(double $amount, array $parameters = [])
+    public function decreaseAvailableBalance(float $amount, array $parameters = [])
     {
         return $this->createAvailableBalanceHistory(-1 * abs(round($amount)), $parameters);
     }
@@ -51,7 +51,7 @@ trait HasAvailableBalance
      *
      * @return \MrEduar\Balance\Balance
      */
-    public function modifyAvailableBalance(double $amount, array $parameters = [])
+    public function modifyAvailableBalance(float $amount, array $parameters = [])
     {
         return $this->createAvailableBalanceHistory(round($amount), $parameters);
     }
@@ -62,7 +62,7 @@ trait HasAvailableBalance
      * @param  array  $parameters
      * @return \MrEduar\Balance\Balance
      */
-    public function resetAvailableBalance(double $newAmount = null, $parameters = [])
+    public function resetAvailableBalance(float $newAmount = null, $parameters = [])
     {
         $this->availableBalanceHistory()->delete();
 
@@ -98,7 +98,7 @@ trait HasAvailableBalance
      *
      * @return \MrEduar\Balance\Balance
      */
-    protected function createAvailableBalanceHistory(double $amount, array $parameters = [])
+    protected function createAvailableBalanceHistory(float $amount, array $parameters = [])
     {
         $reference = Arr::get($parameters, 'reference');
 
