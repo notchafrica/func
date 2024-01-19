@@ -62,7 +62,7 @@ trait HasAvailableBalance
      * @param  array  $parameters
      * @return \MrEduar\Balance\Balance
      */
-    public function resetAvailableBalance(float $newAmount = null, $parameters = [])
+    public function resetAvailableBalance(?float $newAmount = null, $parameters = [])
     {
         $this->availableBalanceHistory()->delete();
 

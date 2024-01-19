@@ -62,7 +62,7 @@ trait HasSandboxBalance
      * @param  array  $parameters
      * @return \MrEduar\Balance\Balance
      */
-    public function resetSandboxBalance(float $newAmount = null, $parameters = [])
+    public function resetSandboxBalance(?float $newAmount = null, $parameters = [])
     {
         $this->sandboxBalanceHistory()->delete();
 
