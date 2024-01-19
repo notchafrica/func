@@ -23,7 +23,7 @@ trait HasSandboxBalance
      */
     public function getIntSandboxBalanceAttribute()
     {
-        return (double) $this->sandboxBalanceHistory()->sum('amount');
+        return (float) $this->sandboxBalanceHistory()->sum('amount');
     }
 
     /**
