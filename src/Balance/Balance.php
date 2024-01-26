@@ -28,6 +28,7 @@ class Balance extends Model
         parent::__construct($attributes);
 
         $this->setTable(config('func.balance.balance_table', 'balance_history'));
+        $this->setConnection(config('func.balance.connection', config('database.default')));
     }
 
     /**
