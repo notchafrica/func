@@ -2,6 +2,10 @@
 
 All notable changes to `func` will be documented in this file.
 
+## 1.28 - 2024-01-26
+
+Added connection config
+
 ## 1.27 - 2024-01-19
 
 Fixed conversion
